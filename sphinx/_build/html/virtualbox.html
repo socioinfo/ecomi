@@ -1,0 +1,256 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1 インストールの前に &mdash; ecomi 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="ecomi 1.0 documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> ecomi
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <!-- Local TOC -->
+                <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">1 インストールの前に</a><ul>
+<li><a class="reference internal" href="#e">e コミマップインストール用仮想マシンの作成</a></li>
+<li><a class="reference internal" href="#id2">ネットワークの設定</a></li>
+<li><a class="reference internal" href="#nat">NAT とホストオンリーアダプターの違い</a><ul>
+<li><a class="reference internal" href="#id3">NAT</a></li>
+<li><a class="reference internal" href="#id4">ホストオンリーアダプター</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">ecomi</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>1 インストールの前に</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/virtualbox.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="virtualbox">
+<span id="id1"></span><h1>1 インストールの前に<a class="headerlink" href="#virtualbox" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="e">
+<h2>e コミマップインストール用仮想マシンの作成<a class="headerlink" href="#e" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://ecomi.socio/share">http://ecomi.socio/share</a> から GEOINT_BASE.ova をダウンロードして VirtualBox <strong>ファイル</strong> → <strong>仮想アプライアンスのインポート</strong> より、VitualBox 仮想マシンを作成します。</p>
+<div class="figure align-center" id="id5">
+<a class="reference internal image-reference" href="_images/vm_import.png"><img alt="_images/vm_import.png" src="_images/vm_import.png" style="width: 310.0px; height: 261.0px;" /></a>
+<p class="caption"><span class="caption-text">GEOINT_BASE のインポート</span></p>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>ネットワークの設定<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>GEOINT_BASE 仮想マシンが作成出来たら GEOINT_BASE のネットワークの設定を行います。</p>
+<ol class="arabic simple">
+<li>設定したい仮想マシンをクリック（ <strong>GEOINT_BASE</strong> ）→ <strong>設定</strong></li>
+</ol>
+<div class="figure align-center" id="id6">
+<a class="reference internal image-reference" href="_images/vm_config.png"><img alt="_images/vm_config.png" src="_images/vm_config.png" style="width: 732.0px; height: 321.0px;" /></a>
+<p class="caption"><span class="caption-text">設定画面の出し方</span></p>
+</div>
+<p>2. <strong>ネットワーク</strong> を選択、 <strong>アダプター 1</strong> が表示されているので、 <strong>割り当て</strong> に <strong>NAT</strong> を選ぶ。
+<strong>高度（D）</strong> の左の <strong>青三角</strong> をクリックして全部表示させる。 <strong>MAC アドレス</strong> <em>以外</em> の項目の一致を確認してください。一致していないときは、修正します。</p>
+<div class="figure align-center" id="id7">
+<a class="reference internal image-reference" href="_images/vm_eth0.png"><img alt="_images/vm_eth0.png" src="_images/vm_eth0.png" style="width: 795.0px; height: 431.0px;" /></a>
+<p class="caption"><span class="caption-text">ネットワークの設定（アダプター1）図をクリックするとはっきり出ます</span></p>
+</div>
+<p>なお <strong>ポートフォワーディング</strong> の項目にはなにも設定しません。クリックする必要はありません。</p>
+<p>3. <strong>アダプター 2</strong> タブを選択。<strong>割り当て</strong> に <strong>ホストオンリーアダプター</strong> を選ぶ。
+<strong>高度（D）</strong> の左の <strong>青三角</strong> をクリックして全部表示させる。 <strong>MAC アドレス</strong> <em>以外</em> の項目の一致を確認してください。一致していないときは、修正します。</p>
+<div class="figure align-center" id="id8">
+<a class="reference internal image-reference" href="_images/vm_eth1.png"><img alt="_images/vm_eth1.png" src="_images/vm_eth1.png" style="width: 795.0px; height: 431.0px;" /></a>
+<p class="caption"><span class="caption-text">ネットワークの設定（アダプター2）図をクリックするとはっきり出ます。</span></p>
+</div>
+<p>なお <strong>ポートフォワーディング</strong> はクリックできません。</p>
+</div>
+<div class="section" id="nat">
+<h2>NAT とホストオンリーアダプターの違い<a class="headerlink" href="#nat" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>NAT<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>VirtualBox は、ダウンロード時など、外のサーバーに接続するために仮想的（ソフトウェア）なルーターを用意していて、そこに仮想的なネットワークカードを接続しています。仮想マシンからは、仮想ネットワークカードを介して外部に通信を行います。 Linux 上から NAT の仮想ネットワークカードは eth0 となります。</p>
+<p>この仮想マシンから外へ接続する仕組みを <strong>NAT</strong> といいます。</p>
+<p>しかし、VitualBox 仮想マシンから外部への一方通行なので、今回のように Web サーバーを仮想マシン上に作成したときなど、外部から仮想マシンに通信を行いたいときは別の手段を講じなければなりません。これが、次に説明する <strong>ホストオンリーアダプター</strong> です。</p>
+</div>
+<div class="section" id="id4">
+<h3>ホストオンリーアダプター<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>VirtualBox をインストールした母艦に仮想的（ソフトウェア）なハブを作成し、そこに、母艦に作られた仮想ネットワークカードと、仮想マシンの仮想ネットワークカードを仮想ハブに接続することにより、母艦と仮想マシン双方向の通信を可能にします。 Linux 上かのホストオンリーアダプターの仮想ネットワークカードは eth1 となります。</p>
+<p>この、母艦と仮想マシン双方向の通信を可能にする仕組みを、 <strong>ホストオンリーアダプター</strong> といいます。</p>
+<p>仮想ネットワークカード双方に自動的に IP アドレスが割り当てられますがこれを <strong>リンクローカルアドレス</strong> といいます。ホストオンリーアダプターを介して仮想マシンから母艦以外の外への通信はできません。外への通信を行うためには上述の NAT という仕組みが必要です。</p>
+<div class="figure align-center" id="id9">
+<a class="reference internal image-reference" href="_images/vm_hostonly.png"><img alt="_images/vm_hostonly.png" src="_images/vm_hostonly.png" style="width: 607.0px; height: 313.0px;" /></a>
+<p class="caption"><span class="caption-text">母艦（Windows）上でのホストオンリーアダプター仮想ネットワークカード（左上）</span></p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, SocioInfo.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

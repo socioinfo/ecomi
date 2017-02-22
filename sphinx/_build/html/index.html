@@ -1,0 +1,279 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Welcome to ecomi’s documentation! &mdash; ecomi 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="ecomi 1.0 documentation" href="#"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> ecomi
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <!-- Local TOC -->
+                <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to ecomi&#8217;s documentation!</a><ul>
+<li><a class="reference internal" href="#id1">表記の注意点</a><ul>
+<li><a class="reference internal" href="#id2">特権ユーザーへの昇格</a><ul>
+<li><a class="reference internal" href="#id3">恒久的な昇格</a></li>
+<li><a class="reference internal" href="#id4">一時的な昇格</a></li>
+<li><a class="reference internal" href="#root">root での作業?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="#">ecomi</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="#">Docs</a> &raquo;</li>
+      
+    <li>Welcome to ecomi&#8217;s documentation!</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="welcome-to-ecomi-s-documentation">
+<h1>Welcome to ecomi&#8217;s documentation!<a class="headerlink" href="#welcome-to-ecomi-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+</div>
+<ul class="simple">
+<li><a class="reference internal" href="virtualbox.html#virtualbox"><span class="std std-ref">1 インストールの前に</span></a></li>
+<li><a class="reference internal" href="prepare.html#prepare"><span class="std std-ref">2 動作環境のインストール手順 Linux</span></a></li>
+<li><a class="reference internal" href="install.html#install"><span class="std std-ref">3 eコミマップのインストール手順</span></a></li>
+</ul>
+<div class="section" id="id1">
+<h2>表記の注意点<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>コマンドを打ち込まない行は <strong>黄色っぽい色</strong> で示されています。黄色でない箇所はコマンドを
+打ち込んだ結果の応答です。黄色っぽい色の行は、（一部選択子を選ぶ箇所は例外ですが）
+行頭 <strong>#</strong> か <strong>$</strong> で始まります。 <strong>#</strong> <strong>$</strong> とその次の <strong>半角スペース</strong> は入力する
+必要はありません。 <strong>#</strong> <strong>$</strong> の意味ですが、 <strong>#</strong> は root での作業、
+<strong>$</strong> は一般ユーザーの作業です。 Unix でも Windows でもそうですが、普段作業する
+ユーザー（以下 <strong>一般ユーザ</strong> ーといいます）となんでもできる <strong>特権ユーザー</strong> は別扱いにし、
+一般ユーザーは中身を変更したり、消されたりすると OS とかアプリケーションに影響が出る
+ファイルは弄ることを禁止したり、他の困ったことが起きかねないコマンドの実行はできなく
+なっています。</p>
+<p>ということで、以下インストール完了までに、 <strong>#</strong> でコマンドを打ち込む箇所は、
+特権ユーザーでの作業なのでこころして行ってください。</p>
+<div class="section" id="id2">
+<h3>特権ユーザーへの昇格<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h4>恒久的な昇格<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<p>恒久的な昇格は一般ユーザーから <strong>sudo su</strong> で昇格します。今回は一般ユーザー名
+として admin を用意しています。 yourpassword は、 admin でログインするときに用いる
+パスワードと同一です。</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="hll"><span class="gp">$</span> sudo su ← 最初の文字が $ なので一般ユーザー（黄色なので sudo su を入力）
+</span><span class="hll"><span class="go">[sudo] password for admin:yourpassword （黄色であるが admin のパスワードだけ入力）</span>
+</span><span class="hll"><span class="gp">#</span> <span class="nb">exit</span> ← 最初の文字が <span class="c1"># なので特権ユーザー（黄色なので exit を入力）</span>
+</span><span class="gp">$</span> ← <span class="nb">exit</span> で特権ユーザーを抜ける、つまり一般ユーザーに戻った（入力しない）
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h4>一時的な昇格<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p>恒久的な昇格で作業を行うととかく間違いやすいもので、できれば特権ユーザーでの作業は
+必要最小限としたいものです。<strong>sudo</strong> に続けて特権ユーザーで実行したいコマンド
+を続けると、一回限りで特権ユーザーで実行します。 yum コマンドは、アプリケーションを
+入れるコマンドなので、特権ユーザーでないと実行できません。</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="hll"><span class="gp">  $</span> sudo yum install -y postgresql96-libs postgresql96 postgresql96-server （入力）
+</span><span class="go">  -- いろいろでるけど省略 --</span>
+<span class="gp">  $</span> ← yum の処理が終わったら一般ユーザーに戻っている（入力ナシ）
+</pre></div>
+</div>
+<p>すなわち、以下と同じです。</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="hll"><span class="gp">$</span> sudo su （入力）
+</span><span class="hll"><span class="go">[sudo] password for admin:yourpassword （パスワードだけ入力）</span>
+</span><span class="hll"><span class="gp">#</span> yum install -y postgresql96-libs postgresql96 postgresql96-server （入力）
+</span><span class="go">-- いろいろでるけど省略 --</span>
+<span class="hll"><span class="gp">#</span> <span class="nb">exit</span> （入力）
+</span><span class="gp">$</span> （入力ナシ）
+</pre></div>
+</div>
+<p>間違えないし sudo をつけるのは面倒なので恒久的な昇格で結構と思われるかもしれませんが、
+そうはいっても間違えるし、もう一つの大きな理由として、 sudo の一時的な昇格でコマンドを
+実行すると、誰が sudo で何を行ったのかが記録に残ります。一方、恒久的な
+昇格は、何を行ったのかはそのままでは記録に残りません。
+他の仕組みで残せたとしても実行者は全部 root になるので個人を特定することができなくなります。
+この <strong>作業ログが残る</strong> という観点でも、 sudo での一時的な昇格が推奨されています。</p>
+</div>
+<div class="section" id="root">
+<h4>root での作業?<a class="headerlink" href="#root" title="Permalink to this headline">¶</a></h4>
+<p>特権ユーザーの名前は root というので、以下のような言い回しがされます。</p>
+<ul class="simple">
+<li>root になる → sudo su で恒久的な昇格</li>
+<li>このコマンドは root で実行する必要があります → sudo + コマンド、または root になってから作業</li>
+<li>このコマンドは root でなくても実行できます。 → 一般ユーザーでも実行できる</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, SocioInfo.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

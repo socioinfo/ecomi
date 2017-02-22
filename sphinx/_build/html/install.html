@@ -1,0 +1,655 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3 eコミマップのインストール手順 &mdash; ecomi 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="ecomi 1.0 documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> ecomi
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <!-- Local TOC -->
+                <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">3 eコミマップのインストール手順</a><ul>
+<li><a class="reference internal" href="#id1">3.1 eコミマップインストール用ディレクリ作成</a></li>
+<li><a class="reference internal" href="#e-geoserver">3.2 eコミマップ用 GeoServer インストール</a></li>
+<li><a class="reference internal" href="#geoserver">3.3 GeoServer の不要なライブリファル削除</a></li>
+<li><a class="reference internal" href="#id2">3.4 ライブリファルの置き換え</a></li>
+<li><a class="reference internal" href="#id3">3.5 GeoServer の不要なサンプルデータファイルの削除</a></li>
+<li><a class="reference internal" href="#e-javascript">3.6 eコミマップ用の JavaScript ライブラリとフォントのインストール</a><ul>
+<li><a class="reference internal" href="#openlayers">OpenLayers</a></li>
+<li><a class="reference internal" href="#dojo-toolkit">Dojo Toolkit</a></li>
+<li><a class="reference internal" href="#ipa">IPA フォント</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id4">3.7 eコミマップパケージファイルのコピーと解凍</a></li>
+<li><a class="reference internal" href="#web">3.8 Web サーバとポートの設定</a><ul>
+<li><a class="reference internal" href="#id5">リンクローカルアドレスの確認</a></li>
+<li><a class="reference internal" href="#mod-proxy">mod_proxy の設定</a><ul>
+<li><a class="reference internal" href="#localhost">192.168.56.101 （リンクローカルアドレス）の代わりに localhost とするとどうなるのか</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#apache-servername">apache の ServerName の設定</a></li>
+<li><a class="reference internal" href="#httpd-apache">httpd （apache）の動作確認</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id6">3.9 e コミマップ用データベースの作成</a></li>
+<li><a class="reference internal" href="#id7">3.10 e コミマップの起動</a><ul>
+<li><a class="reference internal" href="#selinux">SELinux を無効</a></li>
+<li><a class="reference internal" href="#id8">起動</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id9">3.12 e コミマップのインストール</a><ul>
+<li><a class="reference internal" href="#id10">3.12.1 インストール情報入力画面</a></li>
+<li><a class="reference internal" href="#id11">3.12.4 インストール完了画面</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id12">3.13 e コミマップの自動起動設定</a><ul>
+<li><a class="reference internal" href="#id13">eコミマップの起動スクリプトの登録</a></li>
+<li><a class="reference internal" href="#id14">サービスの起動</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id15">ログイン画面が出れば終了です</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">ecomi</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>3 eコミマップのインストール手順</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/install.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="e">
+<span id="install"></span><h1>3 eコミマップのインストール手順<a class="headerlink" href="#e" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>3.1 eコミマップインストール用ディレクリ作成<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="hll"><span class="gp">   $</span> sudo mkdir -p /home/map/webapps/map/WEB-INF
+</span></pre></div>
+</div>
+</div>
+<div class="section" id="e-geoserver">
+<h2>3.2 eコミマップ用 GeoServer インストール<a class="headerlink" href="#e-geoserver" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="hll"><span class="gp">   $</span> <span class="nb">cd</span> ~
+</span><span class="hll"><span class="gp">   $</span> <span class="nb">pwd</span>
+</span><span class="go">   /home/admin</span>
+<span class="hll"><span class="gp">   $</span> unzip geoserver-2.3.5-bin.zip
+</span><span class="go">   -- 省略 --</span>
+<span class="hll"><span class="gp">   $</span> <span class="nb">cd</span> geoserver-2.3.5
+</span><span class="hll"><span class="gp">   $</span> rm -f lib/jetty-*
+</span><span class="hll"><span class="gp">   $</span> rm -f lib/servlet-api-2.5
+</span><span class="hll"><span class="gp">   $</span> rm -f webapps/geoserver/WEB-INF/lib/gwc-*
+</span><span class="hll"><span class="gp">   $</span> rm -f webapps/geoserver/WEB-INF/lib/web-gwc-*
+</span><span class="hll"><span class="gp">   $</span> rm -f data_dir/layergroups/*
+</span><span class="hll"><span class="gp">   $</span> rm -rf data_dir/workspaces/cite/
+</span><span class="hll"><span class="gp">   $</span> rm -rf data_dir/workspaces/it.geosolutions/
+</span><span class="hll"><span class="gp">   $</span> rm -rf data_dir/workspaces/nurc/
+</span><span class="hll"><span class="gp">   $</span> rm -rf data_dir/workspaces/sde/
+</span><span class="hll"><span class="gp">   $</span> rm -rf data_dir/workspaces/sf/
+</span><span class="hll"><span class="gp">   $</span> rm -rf data_dir/workspaces/tiger/
+</span><span class="hll"><span class="gp">   $</span> rm -rf data_dir/workspaces/topp/
+</span><span class="hll"><span class="gp">   $</span> rm -f lib/commons-logging-1.0.jar
+</span><span class="hll"><span class="gp">   $</span> cp webapps/geoserver/WEB-INF/lib/commons-logging-1.1.1.jar lib/
+</span><span class="hll"><span class="gp">   $</span> <span class="nb">cd</span> ..
+</span><span class="hll"><span class="gp">   $</span> sudo cp -r geoserver-2.3.5 /home/map/geoserver
+</span></pre></div>
+</div>
+</div>
+<div class="section" id="geoserver">
+<h2>3.3 GeoServer の不要なライブリファル削除<a class="headerlink" href="#geoserver" title="Permalink to this headline">¶</a></h2>
+<p>3.2 で実行済</p>
+</div>
+<div class="section" id="id2">
+<h2>3.4 ライブリファルの置き換え<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>3.2 で実行済</p>
+</div>
+<div class="section" id="id3">
+<h2>3.5 GeoServer の不要なサンプルデータファイルの削除<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>3.2 で実行済、インストール手順には単にエラーメッセージの抑制との記述がありますが、
+この問題を放置するとeコミマップが立ち上がりません。</p>
+</div>
+<div class="section" id="e-javascript">
+<h2>3.6 eコミマップ用の JavaScript ライブラリとフォントのインストール<a class="headerlink" href="#e-javascript" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="openlayers">
+<h3>OpenLayers<a class="headerlink" href="#openlayers" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="hll"><span class="gp">   $</span> <span class="nb">cd</span> ~
+</span><span class="hll"><span class="gp">   $</span> <span class="nb">pwd</span>
+</span><span class="go">   /home/admin</span>
+<span class="hll"><span class="gp">   $</span> curl -L -O https://github.com/openlayers/ol2/releases/download/release-2.13.1/OpenLayers-2.13.1.tar.gz
+</span><span class="hll"><span class="gp">   $</span> tar xvfz OpenLayers-2.13.1.tar.gz
+</span><span class="go">   -- 省略 --</span>
+<span class="hll"><span class="gp">   $</span> sudo cp -r  OpenLayers-2.13.1 /home/map/webapps/map/OpenLayers
+</span></pre></div>
+</div>
+</div>
+<div class="section" id="dojo-toolkit">
+<h3>Dojo Toolkit<a class="headerlink" href="#dojo-toolkit" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>ここに到達するときは /home/map/webapps/map まで作成済なはずです</li>
+<li>インストール先が dojo-1.9 決め打ちになるので注意してください</li>
+</ul>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="hll"><span class="gp">   $</span> <span class="nb">cd</span> ~
+</span><span class="hll"><span class="gp">   $</span> <span class="nb">pwd</span>
+</span><span class="go">   /home/admin</span>
+<span class="hll"><span class="gp">   $</span> curl -L -O https://download.dojotoolkit.org/release-1.9.4/dojo-release-1.9.4.tar.gz
+</span><span class="gp">   %</span> Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+<span class="go">                                      Dload  Upload   Total   Spent    Left  Speed</span>
+<span class="go">     100 8465k  100 8465k    0     0  1153k      0  0:00:07  0:00:07 --:--:-- 1767k</span>
+<span class="hll"><span class="gp">   $</span> tar xvzf dojo-release-1.9.4.tar.gz
+</span><span class="go">   -- 省略 --</span>
+<span class="hll"><span class="gp">   $</span> sudo mkdir /home/map/webapps/map/js
+</span><span class="hll"><span class="gp">   $</span> sudo cp -r dojo-release-1.9.4 /home/map/webapps/map/js/dojo-1.9
+</span></pre></div>
+</div>
+</div>
+<div class="section" id="ipa">
+<h3>IPA フォント<a class="headerlink" href="#ipa" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="hll"><span class="gp">   $</span> <span class="nb">cd</span> ~
+</span><span class="hll"><span class="gp">   $</span> <span class="nb">pwd</span>
+</span><span class="go">   /home/admin</span>
+<span class="hll"><span class="gp">   $</span> curl -L -O <span class="s2">&quot;https://ja.osdn.net/frs/redir.php?m=iij&amp;f=%2Fipafonts%2F51868%2FIPAfont00303.zip&quot;</span>
+</span><span class="gp">     %</span> Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+<span class="go">                                    Dload  Upload   Total   Spent    Left  Speed</span>
+<span class="go">   100 19.1M  100 19.1M    0     0  1828k      0  0:00:10  0:00:10 --:--:-- 1757k</span>
+<span class="hll"><span class="gp">   $</span> mv redir.php* IPAfont00303.zip
+</span><span class="hll"><span class="gp">   $</span> unzip IPAfont00303.zip
+</span><span class="go">   Archive:  IPAfont00303.zip</span>
+<span class="go">   inflating: IPAfont00303/IPA_Font_License_Agreement_v1.0.txt</span>
+<span class="go">   inflating: IPAfont00303/ipag.ttf</span>
+<span class="go">   inflating: IPAfont00303/ipagp.ttf</span>
+<span class="go">   inflating: IPAfont00303/ipam.ttf</span>
+<span class="go">   inflating: IPAfont00303/ipamp.ttf</span>
+<span class="go">   inflating: IPAfont00303/Readme_IPAfont00303.txt</span>
+<span class="hll"><span class="gp">   $</span> sudo cp -r IPAfont00303 /home/map/webapps/map/WEB-INF/fonts
+</span></pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>3.7 eコミマップパケージファイルのコピーと解凍<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="hll"><span class="gp">$</span> <span class="nb">cd</span> ~
+</span><span class="hll"><span class="gp">$</span> <span class="nb">pwd</span>
+</span><span class="go">/home/admin</span>
+<span class="hll"><span class="gp">$</span> sudo tar xvfz ecommap-installer-2.4.2.tar.gz -C /home/map
+</span></pre></div>
+</div>
+</div>
+<div class="section" id="web">
+<h2>3.8 Web サーバとポートの設定<a class="headerlink" href="#web" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3>リンクローカルアドレスの確認<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>VirtualBox で動いている仮想サーバーの <strong>リンクローカルアドレス</strong> を確認します。今回は名前引きしないので、
+ここでとれた IP アドレス（以下の例では 192.168.56.101）をそのままブラウザの URL に使用
+することにします。 192.168.56.101 とは違う IP アドレスが出てくるかもしれませんが、
+そのときは読み替えてください。</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="hll"><span class="gp">$</span> ifconfig <span class="p">|</span> grep -2 eth1 <span class="p">|</span> grep <span class="s1">&#39;inet addr&#39;</span>
+</span><span class="go">          inet addr:192.168.56.101  Bcast:192.168.56.255  Mask:255.255.255.0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mod-proxy">
+<h3>mod_proxy の設定<a class="headerlink" href="#mod-proxy" title="Permalink to this headline">¶</a></h3>
+<p>jetty はポート 8080 でリクエストを受け付けますが、80 番ポートにするために apache
+から 8080 ポートに問い合わせるようにします。
+192.168.56.101 は先ほど調べたリンクローカルアドレスです。リンクローカルアドレスがこれとは違う
+IP アドレスのときもあります。</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="hll"><span class="gp">$</span> sudo /home/map/proxypass.sh 192.168.56.101 &gt; /etc/httpd/conf.d/ecommap.conf
+</span></pre></div>
+</div>
+<div class="section" id="localhost">
+<h4>192.168.56.101 （リンクローカルアドレス）の代わりに localhost とするとどうなるのか<a class="headerlink" href="#localhost" title="Permalink to this headline">¶</a></h4>
+<p>e コミマップログイン画面直後に <a class="reference external" href="http://localhost/map">http://localhost/map</a> となり、画面遷移がうまくいきません。
+ここで <a class="reference external" href="http://192.168.56.101/map/">http://192.168.56.101/map/</a> とすれば、使用可能です。</p>
+</div>
+</div>
+<div class="section" id="apache-servername">
+<h3>apache の ServerName の設定<a class="headerlink" href="#apache-servername" title="Permalink to this headline">¶</a></h3>
+<p>ServerName がないと怒られるので設定します。エディタで ServerName geoint:80 を追加します。</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="hll"><span class="gp">$</span> sudo gedit /etc/httpd/conf/httpd.conf
+</span></pre></div>
+</div>
+<p>/etc/httpd/conf/httpd.conf</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span>略
+#
+# ServerName gives the name and port that the server uses to identify itself.
+# This can often be determined automatically, but we recommend you specify
+# it explicitly to prevent problems during startup.
+#
+# If this is not set to valid DNS name for your host, server-generated
+# redirections will not work.  See also the UseCanonicalName directive.
+#
+# If your host doesn&#39;t have a registered DNS name, enter its IP address here.
+# You will have to access it by its address anyway, and this will make
+# redirections work in a sensible way.
+#
+#ServerName www.example.com:80
+<span class="hll">ServerName geoint:80
+</span>略
+</pre></div>
+</div>
+<p>編集が終わったら</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="hll"><span class="gp">$</span> sudo service httpd restart
+</span><span class="go">httpd を停止中:                                            [  OK  ]</span>
+<span class="go">httpd を起動中:                                            [  OK  ]</span>
+</pre></div>
+</div>
+<p>再起動しても起動するようにします</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="hll"><span class="gp">$</span> sudo chkconfig httpd on
+</span></pre></div>
+</div>
+</div>
+<div class="section" id="httpd-apache">
+<h3>httpd （apache）の動作確認<a class="headerlink" href="#httpd-apache" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://192.168.56.101">http://192.168.56.101</a> としてブラウザでみます。CentOS のテストページが出れば ok です。</p>
+<div class="figure align-center" id="id16">
+<a class="reference internal image-reference" href="_images/centos_apache_test.png"><img alt="_images/centos_apache_test.png" src="_images/centos_apache_test.png" style="width: 564.9px; height: 335.3px;" /></a>
+<p class="caption"><span class="caption-text">CentOS のテストページ</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>3.9 e コミマップ用データベースの作成<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>postgres の管理者権限はユーザー postgres なので、 ユーザー postgres に化けます。
+さらに、postgres データベースの中だけのユーザー名 mapuser を eコミマップのデータベースを扱う
+用途のためにつくります。そして mapuser に e コミマップのための最低限の権限を与えます。</p>
+<p>ユーザー postgres はすべてのデータベースの削除までできる強い権限があるので、
+必要な時だけ使うことにします。</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="hll"><span class="gp">$</span> sudo su - postgres
+</span><span class="hll"><span class="go">-bash-4.1$ cd</span>
+</span><span class="hll"><span class="go">-bash-4.1$ createuser mapuser -S -d -R -l --password</span>
+</span><span class="hll"><span class="go">パスワード:geoint</span>
+</span><span class="hll"><span class="go">-bash-4.1$ createdb ecommap -U mapuser -E UTF-8</span>
+</span><span class="hll"><span class="go">-bash-4.1$ psql -U postgres ecommap</span>
+</span><span class="go">psql (9.6.1)</span>
+<span class="go">&quot;help&quot; でヘルプを表示します.</span>
+
+<span class="hll"><span class="go">ecommap=# grant all on database ecommap to mapuser;</span>
+</span><span class="go">GRANT</span>
+<span class="hll"><span class="go">ecommap=# grant all on geometry_columns to mapuser;</span>
+</span><span class="go">GRANT</span>
+<span class="hll"><span class="go">ecommap=# grant all on spatial_ref_sys to mapuser;</span>
+</span><span class="go">GRANT</span>
+<span class="hll"><span class="go">ecommap=# \d</span>
+</span><span class="go">                  リレーションの一覧</span>
+<span class="go">スキーマ |       名前        |    型    |  所有者</span>
+<span class="go">----------+-------------------+----------+----------</span>
+<span class="go">public   | geography_columns | ビュー   | postgres</span>
+<span class="go">public   | geometry_columns  | ビュー   | postgres</span>
+<span class="go">public   | spatial_ref_sys   | テーブル | postgres</span>
+<span class="go">(3 行)</span>
+
+<span class="hll"><span class="go">ecommap=# \q</span>
+</span><span class="hll"><span class="go">-bash-4.1$ exit</span>
+</span><span class="hll"><span class="go">logout</span>
+</span><span class="gp">$</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>3.10 e コミマップの起動<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="selinux">
+<h3>SELinux を無効<a class="headerlink" href="#selinux" title="Permalink to this headline">¶</a></h3>
+<p>今この瞬間から SELinux を無効にします。</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="hll"><span class="gp">$</span> sudo setenforce 0
+</span></pre></div>
+</div>
+<p>再起動しても SELnux を無効になるようにしてしまいます。</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="hll"><span class="gp">$</span> sudo gedit /etc/selinux/config
+</span></pre></div>
+</div>
+<p>/etc/selinux/config</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> This file controls the state of SELinux on the system.
+<span class="gp">#</span> <span class="nv">SELINUX</span><span class="o">=</span> can take one of these three values:
+<span class="gp">#</span>     enforcing - SELinux security policy is enforced.
+<span class="gp">#</span>     permissive - SELinux prints warnings instead of enforcing.
+<span class="gp">#</span>     disabled - No SELinux policy is loaded.
+<span class="hll"><span class="go">SELINUX=disabled</span>
+</span><span class="gp">#</span> <span class="nv">SELINUXTYPE</span><span class="o">=</span> can take one of these two values:
+<span class="gp">#</span>     targeted - Targeted processes are protected,
+<span class="gp">#</span>     mls - Multi Level Security protection.
+<span class="go">SELINUXTYPE=targeted</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>起動<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>_option は存在しませんなどエラーが出力されてますが、 <strong>これで正常</strong> です。これらの
+エラーは、 GUI でのインストール設定時にテーブルを作成後解消されます。</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="hll"><span class="gp">$</span> <span class="nb">cd</span> /home/map/geoserver/bin
+</span><span class="hll"><span class="gp">$</span> sudo sh ./startup.sh
+</span><span class="go">The JAVA_HOME environment variable is not defined</span>
+<span class="go">GEOSERVER_HOME environment variable not found, using current</span>
+<span class="go">location.  If not set then running this script from other</span>
+<span class="go">directories will not work in the future.</span>
+<span class="go">GEOSERVER DATA DIR is /home/map/geoserver/bin/../data_dir</span>
+<span class="go">1 [main] INFO org.mortbay.log - Logging to org.slf4j.impl.SimpleLogger@6a22a6bb via org.mortbay.log.Slf4jLog</span>
+<span class="go">413 [main] WARN org.mortbay.log - Deprecated configuration used for /home/map/geoserver/webapps</span>
+<span class="go">458 [main] WARN org.mortbay.log - Deprecated configuration used for ../webapps</span>
+<span class="go">459 [main] INFO org.mortbay.log - jetty-6.1.26</span>
+<span class="go">3494 [main] INFO /geoserver - Initializing Spring root WebApplicationContext</span>
+<span class="go">07 2 23:12:03 WARN [config.CustomEditorConfigurer] - Passing PropertyEditor instances into CustomEditorConfigurer is deprecated: use PropertyEditorRegistrars or PropertyEditor class names instead. Offending key [org.</span>
+<span class="go">geotools.util.Version; offending editor instance: org.geoserver.platform.util.VersionPropertyEditor@4cc7636f</span>
+<span class="go">07 2 23:12:04 WARN [org.geoserver] - No default workspace was found.</span>
+<span class="go">07 2 23:12:04 WARN [org.geoserver] - Ignoring store directory &#39;map&#39;</span>
+<span class="go">07 2 23:12:05 WARN [security.impl] - Namespace/Workspace map is unknown in rule map.*.w=ROLE_WFS_WRITE</span>
+<span class="go">07 2 23:12:30 WARN [geoserver.security] - Strong cryptograhpy is NOT available</span>
+<span class="go">Download and install of policy files recommended</span>
+<span class="go">from http://www.oracle.com/technetwork/java/javase/downloads/jce-6-download-429243.html</span>
+<span class="go">37368 [main] INFO org.mortbay.log - org.mortbay.jetty.plus.webapp.Configuration does not support annotations on source. Use org.mortbay.jetty.annotations.Configuration instead</span>
+<span class="go">37370 [main] INFO org.mortbay.log - No Transaction manager found - if your webapp requires one, please configure one.</span>
+<span class="go">org.postgresql.util.PSQLException: ERROR: リレーション&quot;_option&quot;は存在しません</span>
+<span class="go">Position: 26</span>
+<span class="go">     at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2062)</span>
+<span class="go">     at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1795)</span>
+<span class="go">     at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:257)</span>
+<span class="go">     at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:479)</span>
+<span class="go">     at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:367)</span>
+<span class="go">     at org.postgresql.jdbc2.AbstractJdbc2Statement.executeQuery(AbstractJdbc2Statement.java:271)</span>
+<span class="go">     at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)</span>
+<span class="go">     at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)</span>
+<span class="go">     at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</span>
+<span class="go">     at java.lang.reflect.Method.invoke(Method.java:606)</span>
+<span class="go">     at org.postgresql.ds.jdbc23.AbstractJdbc23PooledConnection$StatementHandler.invoke(AbstractJdbc23PooledConnection.java:455)</span>
+<span class="go">     at com.sun.proxy.$Proxy16.executeQuery(Unknown Source)</span>
+<span class="go">     at jp.ecom_plat.map.db.MapDB.getOption(MapDB.java:509)</span>
+<span class="go">     at jp.ecom_plat.map.db.MapDB.getOption(MapDB.java:456)</span>
+<span class="go">     at jp.ecom_plat.map.osw.CswUpdateCheckThread.checkCswUpdate(CswUpdateCheckThread.java:95)</span>
+<span class="go">     at jp.ecom_plat.map.osw.CswUpdateCheckThread.run(CswUpdateCheckThread.java:306)</span>
+<span class="go">org.postgresql.util.PSQLException: ERROR: リレーション&quot;_community&quot;は存在しません</span>
+<span class="go">Position: 15</span>
+<span class="go">     at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2062)</span>
+<span class="go">     at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1795)</span>
+<span class="go">     at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:257)</span>
+<span class="go">     at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:479)</span>
+<span class="go">     at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:367)</span>
+<span class="go">     at org.postgresql.jdbc2.AbstractJdbc2Statement.executeQuery(AbstractJdbc2Statement.java:271)</span>
+<span class="go">     at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)</span>
+<span class="go">     at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)</span>
+<span class="go">     at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</span>
+<span class="go">     at java.lang.reflect.Method.invoke(Method.java:606)</span>
+<span class="go">     at org.postgresql.ds.jdbc23.AbstractJdbc23PooledConnection$StatementHandler.invoke(AbstractJdbc23PooledConnection.java:455)</span>
+<span class="go">     at com.sun.proxy.$Proxy16.executeQuery(Unknown Source)</span>
+<span class="go">     at jp.ecom_plat.map.db.MapDB.searchCommunityInfo(MapDB.java:1295)</span>
+<span class="go">     at jp.ecom_plat.map.osw.CswUpdateCheckThread.run(CswUpdateCheckThread.java:307)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>3.12 e コミマップのインストール<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p>先ほどのリンクローカルアドレス <a class="reference external" href="http://192.168.56.101/map/install">http://192.168.56.101/map/install</a> をブラウザで見ます。 リンクローカルアドレスが 192.168.56.101 とは違う IP アドレスのときもあります。</p>
+<div class="section" id="id10">
+<h3>3.12.1 インストール情報入力画面<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>データベース情報</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="87%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">項目</th>
+<th class="head">内容</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>データベースサーバ</td>
+<td>localhost</td>
+</tr>
+<tr class="row-odd"><td>データベースポート</td>
+<td>5432</td>
+</tr>
+<tr class="row-even"><td>データベース名</td>
+<td>ecommap</td>
+</tr>
+<tr class="row-odd"><td>データベースユーザ名</td>
+<td>mapuser</td>
+</tr>
+<tr class="row-even"><td>データベースユーザのパスワード</td>
+<td>geoint</td>
+</tr>
+</tbody>
+</table>
+<p>eコミマップサーバ設定</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="82%" />
+<col width="18%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">項目</th>
+<th class="head">内容</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>サイト名称</td>
+<td>eコミマップ</td>
+</tr>
+<tr class="row-odd"><td>管理用パスワード</td>
+<td>geoint</td>
+</tr>
+<tr class="row-even"><td>ポータルサイトURL</td>
+<td><a class="reference external" href="http://localhost/map/">http://localhost/map/</a></td>
+</tr>
+</tbody>
+</table>
+<p>携帯電話登録用メールサーバ設定</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="83%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">項目</th>
+<th class="head">内容</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>携帯電話での登録を利用する</td>
+<td>□ 利用する（チェックを外す）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id11">
+<h3>3.12.4 インストール完了画面<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>3.10 e コミマップの起動 で入力した startup.sh を ctrl+c （コントロールキーを押しながら c）で停止します。</p>
+</div>
+</div>
+<div class="section" id="id12">
+<h2>3.13 e コミマップの自動起動設定<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id13">
+<h3>eコミマップの起動スクリプトの登録<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="hll"><span class="gp">$</span> <span class="nb">cd</span> /home/map/
+</span><span class="hll"><span class="gp">$</span> sudo cp ecommap /etc/init.d/
+</span><span class="hll"><span class="gp">$</span> sudo chmod <span class="m">775</span> /etc/init.d/ecommap
+</span><span class="hll"><span class="gp">$</span> sudo chkconfig ecommap on
+</span></pre></div>
+</div>
+</div>
+<div class="section" id="id14">
+<h3>サービスの起動<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="hll"><span class="gp">$</span> sudo service ecommap restart
+</span></pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id15">
+<h2>ログイン画面が出れば終了です<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<p>リンクローカルアドレス <a class="reference external" href="http://192.168.56.101/map/">http://192.168.56.101/map/</a> をブラウザで見ます。 リンクローカルアドレスが 192.168.56.101 とは違う IP アドレスのときもあります。ログイン画面がでましたか?</p>
+<div class="figure align-center" id="id17">
+<a class="reference internal image-reference" href="_images/ecomi_login.png"><img alt="_images/ecomi_login.png" src="_images/ecomi_login.png" style="width: 335.3px; height: 230.3px;" /></a>
+<p class="caption"><span class="caption-text">eコミマップログイン画面</span></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, SocioInfo.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
