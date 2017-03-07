@@ -223,3 +223,17 @@ dummy:
 	$(SPHINXBUILD) -b dummy $(ALLSPHINXOPTS) $(BUILDDIR)/dummy
 	@echo
 	@echo "Build finished. Dummy builder generates no files."
+
+.PHONY: autobuild
+setup_auto_build:
+	@if [ ! -f $(package.json) ]; \
+		then npm init -y; \
+	fi
+	$(if [`npm list grunt-cli | grep empty`], @echo "[grunt-cli] already installed" , npm install -g grunt-cli )
+	$(if [`npm list grunt | grep empty`], @echo "[grunt] already installed" , npm install grunt --save-dev )
+	$(if [`npm list grunt-contrib-watch | grep empty`], @echo "[grunt-contrib-watch] already installed" , npm install grunt-contrib-watch --save-dev  )
+	curl -O -L https://gist.githubusercontent.com/esperia/698c089861ab9d246940/raw/2054d7f285e9636fb48bf0ff388f9d07a578252d/Gruntfile.js
+
+.PHONY: auto-build
+auto-build:
+	grunt watch
